@@ -107,5 +107,62 @@ ghci> [1,2,3,4] !! 2
 - haskell ではリストの比較が可能
 
 ```hs
+ghci> [1,2,3] > [1,2,2]
+True
+ghci> [1,2,3] > [1,2,3]
+False
+ghci> [1,2,3] > [1,2,4]
+False
+ghci> [1,2,3] == [1,2,3]
+True
+ghci> [1,2,3] > [1,1]
+True
+ghci> [1,2,3] > [1,3]
+False
+ghci> [1,2,3] == [1,3]
+False
+```
 
+### さらなるリスト操作
+
+```hs
+ghci> head [1,2,3]
+1
+ghci> tail [1,2,3]
+[2,3]
+ghci> last [1,2,3]
+3
+ghci> init [1,2,3]
+[1,2]
+ghci> head []
+*** Exception: Prelude.head: empty list
+```
+
+#### 📝
+
+- head - last
+- init - tail
+- これらの関数に空のリストは渡せない
+
+length, reverse, take
+
+```js
+ghci> length []
+0
+ghci> length [5,4]
+2
+ghci> null [1,2,3]
+False
+ghci> null []
+True
+ghci> reverse [1,2,3]
+[3,2,1]
+ghci> reverse []
+[]
+ghci> take 2 [1,2,3]
+[1,2]
+ghci> take 0 [1,2,3]
+[]
+ghci> take 5 [1,2,3]
+[1,2,3]
 ```
