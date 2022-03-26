@@ -218,6 +218,17 @@ ghci> take 8 (repeat['w'])
 ["w","w","w","w","w","w","w","w"]
 ```
 
+#### 🤔
+
+```hs
+ghci> take 8 (repeat['w'])
+["w","w","w","w","w","w","w","w"]
+ghci> take 8 (cycle['w'])
+"wwwwwwww"
+```
+
+なぜ出力が微妙に違う？
+
 数列を作る
 
 ```hs
