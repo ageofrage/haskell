@@ -166,3 +166,61 @@ ghci> take 0 [1,2,3]
 ghci> take 5 [1,2,3]
 [1,2,3]
 ```
+
+## 1.4 レンジでチン！
+
+リストを生成する
+
+```hs
+ghci> [1..20]
+[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
+ghci> ['a'.. 'z']
+"abcdefghijklmnopqrstuvwxyz"
+ghci> ['a'.. 'Z']
+
+<interactive>:50:1: warning: [-Wempty-enumerations]
+    Enumeration is empty
+""
+ghci> ['A'.. 'z']
+"ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz"
+ghci> [2,4..20]
+[2,4,6,8,10,12,14,16,18,20]
+ghci> ['a', 'c'..'z']
+"acegikmoqsuwy"
+ghci> [1,2,4,8,16..100]
+
+<interactive>:54:12: error: parse error on input ‘..’
+ghci> [20,19..1]
+[20,19,18,17,16,15,14,13,12,11,10,9,8,7,6,5,4,3,2,1]
+ghci> [20..1]
+[]
+ghci> [5,15..10*20]
+[5,15,25,35,45,55,65,75,85,95,105,115,125,135,145,155,165,175,185,195]
+```
+
+#### 📝
+
+- これは便利 😇
+- step は１つまで
+- 減少する列は step がないと期待通りにならない
+
+無限数列
+
+```hs
+ghci> [2,4..]
+-- 無限の数列が作れる
+[2,4,6,8...]
+ghci> take 10 (cycle[1,2,3,4])
+[1,2,3,4,1,2,3,4,1,2]
+ghci> take 8 (cycle['w','W', 'w'])
+"wWwwWwwW"
+ghci> take 8 (repeat['w'])
+["w","w","w","w","w","w","w","w"]
+```
+
+数列を作る
+
+```hs
+ghci> replicate 8 'w'
+"wwwwwwww"
+```
