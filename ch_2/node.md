@@ -19,3 +19,12 @@ ghci> :t 'a'
 addThree :: Int -> Int -> Int -> Int
 addThree x y z = x + y + z
 ```
+
+## 2.2 一般的な haskell の型
+
+- Int は有界(min, max がある。-2^63 ~ 2^63 - 1)
+- Integer は有界でない
+- float
+- Double
+- Bool
+- Char
