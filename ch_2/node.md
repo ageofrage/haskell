@@ -83,3 +83,32 @@ String は [Char] と同じ
 ### Enum 型クラス
 
 要素の列挙ができる型
+Enum のインスタンスに succ と pred が定義されている
+
+### Bounded 型クラス
+
+上限と下限を持つ
+それぞれ minBound と maxBound 関数で調べることができる
+
+```hs
+ghci> minBound::Int
+-9223372036854775808
+```
+
+### Num 型クラス
+
+数の型クラス
+
+### Floating 型クラス
+
+浮動小数点数のクラス
+
+### Integral 型クラス
+
+Num と違い、整数のみ
+fromIntegral は整数を引数に一般的な数を返す
+
+#### 🤔
+
+fromIntegral がよくわからない。
+汎用的な型にキャストする？
