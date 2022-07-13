@@ -1,0 +1,4 @@
+stack instal aeson was failed
+why
+I don't know that reason why
+so I try to make todo
