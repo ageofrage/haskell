@@ -1,13 +1,13 @@
 module Lib
-    ( todo
+    ( add,view, remove
     ) where
 
 import System.IO
 
-todo :: IO ()
+add ::[String] -> IO ()
+remove::[String] -> IO ()
+view::[String] -> IO ()
 
-todo = do
-  todoItem <- getLine
-  appendFile "todo.txt" (todoItem ++ "\n")
-
-  
+add [fileName, todoItem] = appendFile fileName (todoItem ++ "\n")
+remove [fileName, todoItem] = appendFile fileName (todoItem ++ "\n")
+view [fileName, todoItem] = appendFile fileName (todoItem ++ "\n")
